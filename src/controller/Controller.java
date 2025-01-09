@@ -270,7 +270,7 @@ public class Controller {
     public static boolean registerUser(String phone, String address, String name, String password) {
         try {
             conn.connect();
-            String query = "SELECT * FROM customer WHERE phone = ? AND address = ?";
+            String query = "SELECT * FROM customer WHERE phone = ? OR address = ?";
             PreparedStatement stmt = conn.con.prepareStatement(query);
             stmt.setString(1, phone);
             stmt.setString(2, address);
