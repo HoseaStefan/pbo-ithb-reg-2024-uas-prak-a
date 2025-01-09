@@ -218,7 +218,7 @@ public class Controller {
                     stmt2.setInt(1, transactionId);
                     stmt2.setString(2, "pending");
                     stmt2.setString(3, java.time.LocalDateTime.now().toString());
-                    stmt2.setString(3, "Kurir");
+                    stmt2.setString(4, "Kurir");
 
                     int rowsInserted2 = stmt2.executeUpdate();
                     if (rowsInserted2 > 0) {
