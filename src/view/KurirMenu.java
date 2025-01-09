@@ -5,23 +5,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
 import model.CurrentUser;
 import model.Customer;
 
-import javax.swing.*;
 import java.awt.*;
 
-public class CustomerMenu {
-    public CustomerMenu(){
-        showCustomerMenu();
+public class KurirMenu {
+    public KurirMenu(){
+        showKurirMenu();
     }
 
-    public void showCustomerMenu(){
+    public void showKurirMenu(){
         CurrentUser currentUser = CurrentUser.getInstance();
         Customer customerLogin = currentUser.getUser();
 
@@ -58,30 +55,17 @@ public class CustomerMenu {
         labelWelcome.setFont(buttonFont);
         frame.add(labelWelcome);
 
-        JButton buttonKirim = new JButton("Lakukan Pengiriman!");
-        buttonKirim.setBounds(245, 200, 200, 40);
-        buttonKirim.setFont(buttonFont);
-        buttonKirim.setBackground(buttonBackground);
-        buttonKirim.setForeground(buttonForeground);
-        buttonKirim.setBorder(buttonBorder);
-        frame.add(buttonKirim);
+        JButton buttonEditDetails = new JButton("Ganti Detail Pengiriman!");
+        buttonEditDetails.setBounds(245, 200, 200, 40);
+        buttonEditDetails.setFont(buttonFont);
+        buttonEditDetails.setBackground(buttonBackground);
+        buttonEditDetails.setForeground(buttonForeground);
+        buttonEditDetails.setBorder(buttonBorder);
+        frame.add(buttonEditDetails);
 
-        JButton buttonHistory = new JButton("Cek History!");
-        buttonHistory.setBounds(245, 260, 200, 40);
-        buttonHistory.setFont(buttonFont);
-        buttonHistory.setBackground(buttonBackground);
-        buttonHistory.setForeground(buttonForeground);
-        buttonHistory.setBorder(buttonBorder);
-        frame.add(buttonHistory);
-
-        buttonKirim.addActionListener(e -> {
+        buttonEditDetails.addActionListener(e -> {
             frame.dispose();
-            new FormKirim();
-        });
-
-        buttonHistory.addActionListener(e -> {
-            frame.dispose();
-            new MenuHistory();
+            new GantiDetailPengiriman();
         });
 
         JButton buttonLogout = new JButton("Logout");
