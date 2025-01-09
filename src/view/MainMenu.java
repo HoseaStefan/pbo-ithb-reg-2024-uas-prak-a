@@ -21,7 +21,16 @@ public class MainMenu {
 
         buttonLogin.addActionListener(e -> {
             frame.dispose();
-            // new FormLogin();
+            new FormLogin();
+        });
+
+        JButton buttonRegister = new JButton("Register");
+        buttonRegister.setBounds(100, 150, 200, 30);
+        frame.add(buttonRegister);
+
+        buttonRegister.addActionListener(e -> {
+            frame.dispose();
+            new FormRegister();
         });
 
         
