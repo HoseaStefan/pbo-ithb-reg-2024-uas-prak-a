@@ -54,6 +54,15 @@ public class FormLogin {
                 JOptionPane.showMessageDialog(frame, "Isi terlebih dahulu kawan!");
             }
         });
+
+        JButton buttonCancel = new JButton("Cancel");
+        buttonCancel.setBounds(100, 280, 200, 30);
+        frame.add(buttonCancel);
+
+        buttonCancel.addActionListener(e -> {
+            frame.dispose();
+            new MainMenu();
+        });
         
         frame.setVisible(true);
     }
